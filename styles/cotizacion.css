@@ -38,6 +38,7 @@
 }
 .titleLine p {
     /* Datos de cliente */
+    width: 100%;
     height: 21px;
     font-style: normal;
     font-weight: normal;
