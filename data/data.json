@@ -104,5 +104,69 @@
             "observacion": "Una garantia",
             "total": 1350000
         }
+    ],
+
+    "cuentas_cobro":[
+
+        {
+            "id": 1,
+            "total": 100000,
+            "cliente": {
+                "name": "Laura Pulido Tamayo",
+                "id": "1",
+                "cedula": "1005486485",
+                "address": "Cra 42 #2a22",
+                "phoneNumb": "4477123",
+                "email": "LaPuTa@example.com"
+            },
+            "producto":[ {
+                "ref": "121",
+                "name": "KK de perro",
+                "alto": 2000,
+                "ancho": 1000,
+                "area": 2000000,
+                "precio": 1000000,
+                "cantidad": 2
+            },
+            {
+                "ref": "122",
+                "name": "KK de gato",
+                "alto": 2000,
+                "ancho": 1000,
+                "area": 2000000,
+                "precio": 1000000,
+                "cantidad": 2
+            }]
+        },
+
+        {
+            "id": 2,
+            "total": 1200000,
+            "cliente": {
+                "name": "German Garmendia",
+                "id": "3",
+                "cedula": "3454575185204",
+                "address": "Cra 40 # 3a33",
+                "phoneNumb": "4588124",
+                "email": "german@example.com"
+            },
+            "producto":[ {
+                "ref": "12345",
+                "name": "Lamina de acero",
+                "alto": 2000,
+                "ancho": 1000,
+                "area": 2000000,
+                "precio": 1000000,
+                "cantidad": 2
+            }]
+
+
+
+
+        }
+
+
     ]
+
+
 }

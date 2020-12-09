@@ -1,15 +1,46 @@
 //import styles from '../../styles/cotizacion.css';
-import { Input, AutoComplete} from 'antd';
+import DATA from '../../data/data.json'
+
+import { useState,useEffect } from 'react';
+import { Input,Table,Button} from 'antd';
+import {SearchOutlined } from '@ant-design/icons'
 
 
+const NumOrdenServ = ({buscarCuenta, dataSource}) => {
 
+    
 
-const NumOrdenServ = () => {
+    const style1 ={ width: '200px'};
+    const [ordenServ, setOrdenServicio] = useState();
+    
+    /*useEffect(()=>{
+      console.log(dataSource)
+    })*/
+    
 
-    const {TextArea} = Input;
+      
+      const columns = [
+        {
+          title: 'Descripción',
+          dataIndex: 'descripcion',
+        },
+        {
+          title: 'Cantidad',
+          dataIndex: 'cantidad',
+          
+        },
+        {
+          title: 'Precio Unit.',
+          dataIndex: 'precio_unit',
+        },
+        {
+          title: 'Total',
+          dataIndex: 'total',
+        },
+    ]
+      
 
-    const style1 ={ width: '250px'};
-    const style2 ={ width: '100%', height: '200px' };
+    
 
     return(
        
@@ -17,20 +48,29 @@ const NumOrdenServ = () => {
                 <h1>
                     Orden de servicio
                 </h1>
-                <input 
+                <Input 
+                    refs='s'
                     placeholder='No. Orden'
                     style={style1}
-                /> 
-                <h2 style={{marginTop:'50px'}}>Cuenta de Cobro No. 1</h2>
-
+                    name='inputCuenta'
+                    value={ordenServ}
+                    onChange={evento => {setOrdenServicio(evento.target.value)}}
+                />  
+                <Button
+                    onClick = {()=>buscarCuenta(ordenServ)}
+                    type = "primary"
+                    //shape = 'circle'
+                    icon = {<SearchOutlined />}
+                ></Button>
+                <h2 style={{marginTop:'50px'}}>Cuenta de Cobro No. {ordenServ}</h2>
                 <h1 className='tabla'>Por concepto de</h1>
-                <TextArea
-                    style={style2}
+                <Table 
+                    dataSource={dataSource}
+                    columns={columns}
+                    size="middle"
+                    bordered= {true}
                 />
-
             </div>
-        
-        
     )
 }
 

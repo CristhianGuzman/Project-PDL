@@ -1,12 +1,21 @@
-import {input} from 'antd';
-const Total = () =>{
+import {Button} from 'antd';
+const Total = ({total}) =>{
     return(
         <div className='all'>
             <div>
                 <h1 className='title1' style={{width: '170px'}}>Total</h1>
-                <p>$ 1.500.000</p>
+                <p>$ {total} </p>
+            </div>
+            <div>
+                <Button className='title1' type='primary' >Imprimir</Button>
             </div>
         </div>
+        
+            
+        
+        
+
+
     )
 }
 
